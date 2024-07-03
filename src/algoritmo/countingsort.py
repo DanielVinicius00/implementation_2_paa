@@ -1,4 +1,4 @@
-def comparison_counting_sort(A):
+def countingsort(A):
     n = len(A)
     B = [0] * n
     for i in range(n):
@@ -11,4 +11,4 @@ def comparison_counting_sort(A):
 
 # Exemplo
 A = [3, 1, 2, 2]
-print(comparison_counting_sort(A))  # Saída: [1, 2, 2, 3]
+print(countingsort(A))  # Saída: [1, 2, 2, 3]

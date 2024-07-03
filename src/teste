@@ -1,0 +1,4 @@
+List Size,List Type,Algorithm,Comparisons,Swaps,Time (ms)
+search,example,this is an example,HorspoolMatching,11,0.016689300537109375
+search,example,this is an example,boyer_moore,,0.021457672119140625
+search,example,this is an example,HorspoolMatching,11,0.019788742065429688

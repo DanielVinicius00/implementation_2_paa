@@ -1,7 +1,9 @@
-def horspool_matching(P, T):
+from algoritmo.shift_table import create_shift_table
+
+def HorspoolMatching(P, T):
     m = len(P)
     n = len(T)
-    table = shift_table(P)
+    table = create_shift_table(P)  # Use create_shift_table instead of table
     
     i = m - 1
     while i < n:
@@ -18,4 +20,4 @@ def horspool_matching(P, T):
 # Exemplo
 P = "example"
 T = "this is an example"
-print(horspool_matching(P, T))  # Saída: 11 (posição onde "example" começa em T)
+print(HorspoolMatching(P, T))  # Saída: 11 (posição onde "example" começa em T)

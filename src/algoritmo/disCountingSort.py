@@ -1,4 +1,4 @@
-def distribution_counting_sort(A, l, u):
+def disCountingSort(A, l, u):
     n = len(A)
     count = [0] * (u - l + 1)
     B = [0] * n
@@ -17,4 +17,4 @@ def distribution_counting_sort(A, l, u):
 
 # Exemplo
 A = [3, 1, 2, 2]
-print(distribution_counting_sort(A, 1, 3))  # Saída: [1, 2, 2, 3]
+print(disCountingSort(A, 1, 3))  # Saída: [1, 2, 2, 3]

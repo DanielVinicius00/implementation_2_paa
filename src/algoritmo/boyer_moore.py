@@ -9,27 +9,22 @@ def preprocess_bad_character_rule(P):
 
 def preprocess_good_suffix_rule(P):
     m = len(P)
-    good_suffix_shift = [0] * m
+    good_suffix_shift = [m] * m  # Inicializa com m
     z = [0] * m
     z_box(P[::-1], z)
     z = z[::-1]
     
-    longest = 0
     for j in range(m):
+        if z[j] > 0 and m - z[j] < m:
+            good_suffix_shift[m - z[j] - 1] = j + 1
+
+    longest = 0
+    for j in range(m - 1, -1, -1):
         if z[j] > 0:
-            longest = j
-        good_suffix_shift[m - z[j]] = j
-    
-    for j in range(m - 1, 0, -1):
-        if z[j] > 0:
-            for k in range(j + 1 - z[j], j + 1):
-                if good_suffix_shift[k] == 0:
-                    good_suffix_shift[k] = j
-    
-    for j in range(m - 1):
-        if good_suffix_shift[j] == 0:
+            longest = j + 1
+        if good_suffix_shift[j] == m:
             good_suffix_shift[j] = longest
-    
+
     return good_suffix_shift
 
 def z_box(S, Z):
